@@ -1,7 +1,6 @@
 package com.codeclan.example.filesHomework.controller;
 
 import com.codeclan.example.filesHomework.models.Folder;
-import com.codeclan.example.filesHomework.models.User;
 import com.codeclan.example.filesHomework.repository.FolderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +11,7 @@ import java.util.List;
 
 @RestController
 public class FolderController {
+
     @Autowired
     FolderRepository folderRepository;
 
@@ -20,7 +20,7 @@ public class FolderController {
         return new ResponseEntity<>(folderRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "folders/{id}")
+    @GetMapping(value = "/folders/{id}")
     public ResponseEntity getFolder(@PathVariable Long id){
         return new ResponseEntity<>(folderRepository.findById(id), HttpStatus.OK);
     }

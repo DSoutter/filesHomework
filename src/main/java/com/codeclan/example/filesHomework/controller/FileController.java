@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 public class FileController {
+
     @Autowired
     FileRepository fileRepository;
 
@@ -19,7 +20,7 @@ public class FileController {
         return new ResponseEntity<>(fileRepository.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping(value = "files/{id}")
+    @GetMapping(value = "/files/{id}")
     public ResponseEntity getFile(@PathVariable Long id){
         return new ResponseEntity<>(fileRepository.findById(id), HttpStatus.OK);
     }
